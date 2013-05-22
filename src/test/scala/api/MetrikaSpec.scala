@@ -230,10 +230,23 @@ class MetrikaSpec extends Specification with AllExpectations {
       res \ "date2" must_!= (JsNull)
       res \ "totals" \ "visits" must_!= (JsNull)
       val data = (res \ "data").as[List[JsValue]]
-      data.length must_== (100)
+      data.length must_== ((res \ "rows").as[Int])
       data.head \ "denial" must_!= (JsNull)
       data.head \ "id" must_== (JsString("1097347136981725315"))
       data.head \ "phrase" must_!= (JsNull)
+    }
+  }
+
+  "getStatSourcesDirectSummary" should {
+    sequential
+
+    "send TRUE request" in {
+      val res = m.getStatSourcesDirectSummary(OParameters(id = Some(id)))
+
+      res \ "errors" must_!= (JsNull)
+      val data = (res \ "errors").as[List[JsValue]]
+      data.length must_== (1)
+      data.head \ "code" must_== (JsString("ERR_NO_DATA"))
     }
   }
 
