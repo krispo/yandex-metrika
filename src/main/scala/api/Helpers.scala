@@ -73,22 +73,22 @@ object Helpers {
 
 case class OParameters(
   //counters
-  val `type`: Option[String] = None,
-  val permission: Option[String] = None,
-  val ulogin: Option[String] = None,
-  val field: Option[String] = None,
+  var `type`: Option[String] = None,
+  var permission: Option[String] = None,
+  var ulogin: Option[String] = None,
+  var field: Option[String] = None,
   //stats
-  val id: Option[Long] = None,
-  val mirror_id: Option[String] = None,
-  val goal_id: Option[Long] = None,
-  val se_id: Option[Long] = None,
-  val date1: Option[String] = None, //YYYMMDD
-  val date2: Option[String] = None, //YYYMMDD
-  val table_mode: Option[String] = None,
-  val group: Option[String] = None,
-  val per_page: Option[Long] = None,
-  val sort: Option[String] = None,
-  val reverse: Option[Byte] = None) {
+  var id: Option[Long] = None,
+  var mirror_id: Option[String] = None,
+  var goal_id: Option[Long] = None,
+  var se_id: Option[Long] = None,
+  var date1: Option[String] = None, //YYYMMDD
+  var date2: Option[String] = None, //YYYMMDD
+  var table_mode: Option[String] = None,
+  var group: Option[String] = None,
+  var per_page: Option[Long] = None,
+  var sort: Option[String] = None,
+  var reverse: Option[Byte] = None) {
 
   def toSeq: Seq[(String, String)] = {
     Seq(

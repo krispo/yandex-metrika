@@ -130,10 +130,10 @@ val statParams = OParameters(id = Some(2138128)) //fake id parameter for Yandex
 val statsDirect = metrika.getStatSourcesPhrases(statParams)
 ``` 
 
-The result for statistics in JSON format You can see at [here](http://api-metrika.yandex.ru/stat/sources/phrases.json?id=2138128&pretty=1&oauth_token=05dd3dd84ff948fdae2bc4fb91f13e22)
+The result for statistics in JSON format You can see at [here](http://api-metrika.yandex.ru/stat/sources/phrases.json?id=2138128&pretty=1&oauth_token=05dd3dd84ff948fdae2bc4fb91f13e22).
 
 Show the [source code](https://github.com/krispo/yandex-metrika/tree/master/src/main/scala/Demo.scala) of this simple example.
 
 ## License
 
-This library is under MIT license. Check the [LICENSE](https://github.com/krispo/yandex-metrika/LICENSE) file.
+This library is under MIT license. Check the [LICENSE](https://github.com/krispo/yandex-metrika/blob/master/LICENSE) file.
