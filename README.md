@@ -8,13 +8,27 @@ Sing in via login (Your Yandex account) and token (acccess key for Your applicat
 
 It is assumed token is known by one of [those](http://api.yandex.com/oauth/doc/dg/reference/obtain-access-token.xml) ways.
 
-## Installation
+## Dependency
 
-Be soon
+For SBT, add these lines to Your SBT project definition:
+
+```scala
+libraryDependencies ++= Seq(
+				// other dependencies here
+				"com.github.krispo" % "yandex-metrika_2.10" % "0.1-SNAPSHOT"
+				)				 
+```
+and
+```scala
+resolvers ++= Seq(
+		// other resolvers here
+		"Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+		)
+```
 
 ## Example
 
-At first import metrika api library
+At first, import metrika api library
 
 ```scala
 import api._
