@@ -1,4 +1,4 @@
-package api
+package yandex.metrika
 
 import Helpers._
 

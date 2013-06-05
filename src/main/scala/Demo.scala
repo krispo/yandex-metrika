@@ -1,4 +1,4 @@
-import api._
+import yandex.metrika._
 
 object Demo {
 

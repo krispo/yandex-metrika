@@ -31,7 +31,7 @@ resolvers ++= Seq(
 At first, import metrika api library
 
 ```scala
-import api._
+import yandex.metrika._
 ```
 
 Then we can initialize new Metrika class with specified yandex fake login and token:

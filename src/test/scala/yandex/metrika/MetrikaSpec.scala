@@ -1,4 +1,4 @@
-package api
+package yandex.metrika
 
 import org.specs2.mutable._
 import org.specs2.specification._

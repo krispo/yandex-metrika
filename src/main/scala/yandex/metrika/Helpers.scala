@@ -1,4 +1,4 @@
-package api
+package yandex.metrika
 
 /**
  * --- YANDEX Global Information ---
