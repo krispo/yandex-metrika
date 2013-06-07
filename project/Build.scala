@@ -12,7 +12,7 @@ object Ymetrika extends Build {
     name := "yandex-metrika",
     organization := "com.github.krispo",
     scalaVersion := "2.10.0",
-    version := "0.1-SNAPSHOT")
+    version := "0.2-SNAPSHOT")
 
   lazy val dependencySettings: Seq[Setting[_]] = Seq(
     libraryDependencies ++= Seq(
