@@ -11,17 +11,22 @@ object Ymetrika extends Build {
   lazy val projectSettings: Seq[Setting[_]] = Seq(
     name := "yandex-metrika",
     organization := "com.github.krispo",
-    scalaVersion := "2.10.0",
+    scalaVersion := "2.11.1",
     version := "0.2-SNAPSHOT")
 
   lazy val dependencySettings: Seq[Setting[_]] = Seq(
     libraryDependencies ++= Seq(
-      "play" % "play_2.10" % "2.1.0",
-      "org.specs2" % "specs2_2.10" % "1.14" % "test"))
+      "com.typesafe.play" %% "play-json" % "2.4-SNAPSHOT",
+      "com.typesafe.play" %% "play-ws" % "2.4-SNAPSHOT",
+      "org.specs2" %% "specs2" % "2.5-SNAPSHOT" % "test"))
 
   lazy val resolversSettings: Seq[Setting[_]] = Seq(
     resolvers ++= Seq(
-      "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"))
+      "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
+      "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
+      "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+    )
+  )
 
   lazy val publishSettings: Seq[Setting[_]] = PublishSettings.publishSettings
 
