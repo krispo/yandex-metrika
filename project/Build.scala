@@ -11,7 +11,7 @@ object Ymetrika extends Build {
   lazy val projectSettings: Seq[Setting[_]] = Seq(
     name := "yandex-metrika",
     organization := "com.github.krispo",
-    scalaVersion := "2.11.1",
+    scalaVersion := "2.11.2",
     version := "0.2-SNAPSHOT")
 
   lazy val dependencySettings: Seq[Setting[_]] = Seq(
