@@ -5,17 +5,20 @@ import Helpers._
 import play.api.libs.json._
 import scala.concurrent.{ Future, Await }
 import scala.concurrent.duration._
-import play.api.libs.concurrent.Execution.Implicits._
-import scala.util._
 
 import play.api.libs.ws._
+import play.api.libs.ws.ning.NingWSClient
+import play.api.libs.ws.ning.NingAsyncHttpClientConfigBuilder
 
 case class Metrika(
   val login: String,
   val token: String) {
 
+  val builder = new NingAsyncHttpClientConfigBuilder( new DefaultWSClientConfig() )
+  implicit val client = new NingWSClient(builder.build())
+
   def call(method: String, url: String, params: OParameters = OParameters(), bodyparams: JsValue = JsNull, field: Option[String] = None): JsValue = {
-    val request = WS.url(url).withQueryString(("pretty", "1") +: ("oauth_token", token) +: params.toSeq: _*)
+    val request = WS.clientUrl(url).withQueryString(("pretty", "1") +: ("oauth_token", token) +: params.toSeq: _*)
     val fres = method match {
       case "GET" => request.get()
       //case "POST" => request.post[JsValue](bodyparams)
@@ -40,7 +43,7 @@ case class Metrika(
   }
 
   def getDataByLink(link: String, field: String): List[JsValue] = {
-    val fres = WS.url(link).get()
+    val fres = WS.clientUrl(link).get()
     val jsRes = Await.result(fres, Duration.Inf).json
     val data = (jsRes \ field).as[List[JsValue]]
     (jsRes \ "links" \ "next").asOpt[String] map { newlink =>
