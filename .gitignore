@@ -5,3 +5,10 @@ target
 /.project
 /.cache
 /.history
+
+.directory
+
+# Intellij
+.idea/
+*.iml
+*.iws
